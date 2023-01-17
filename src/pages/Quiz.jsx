@@ -71,7 +71,6 @@ export default function Quiz() {
     
 
     const saveSelectedAnswer = (data) => {
-
         if(currentPosition === questions.length - 1){
             submitAnswer()
         }else{
@@ -95,7 +94,6 @@ export default function Quiz() {
         localStorage.setItem("resume", false);
         let right = 0, wrong = 0
         questions.map((item,index) => {
-            console.log(item.answer, answer[index])
             item.answer === answer[index] ? right += 1 : wrong += 1 
         })
         setRightAnswer(right)

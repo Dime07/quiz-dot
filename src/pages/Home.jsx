@@ -1,5 +1,5 @@
 import React from 'react'
-import { ButtonPrimary } from '../components/Button'
+import { ButtonPrimary, ButtonSecondary } from '../components/Button'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { CardMultiple } from '../components/Card'
@@ -86,7 +86,10 @@ export default function Home() {
                     {second} Second
                 </p>
             </div>
-            <ButtonPrimary text="Start Quiz" click={() => navigate('/quiz', {state : {data : questions}})}/>    
+            <ButtonPrimary text="Start Quiz" click={() => navigate('/quiz', {state : {data : questions}})}/>   
+            <div className='mt-4'>
+                <ButtonSecondary text="Logout" click={() => {localStorage.removeItem('token'), window.location.reload(false)} }/>    
+            </div> 
         </div>
     </section>
   )

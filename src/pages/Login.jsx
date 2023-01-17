@@ -21,7 +21,6 @@ export default function Login(props) {
             password: password
         })
         .then((res) => {
-            console.log(res)
             if(res.status === 200) {
                window.localStorage.setItem('token', res.data.token) 
                props.userIsLogin(true)
